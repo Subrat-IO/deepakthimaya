@@ -1,14 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export function HeroVisualBackdrop() {
-  const reduced = useReducedMotion();
-
-  if (reduced) {
-    return <div className="hero-backdrop hero-backdrop-static" aria-hidden="true" />;
-  }
-
   return (
     <div className="hero-backdrop" aria-hidden="true">
       <motion.span

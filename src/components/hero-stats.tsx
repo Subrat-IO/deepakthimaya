@@ -1,10 +1,11 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { CSSProperties, ReactNode } from "react";
+import { useHydratedReducedMotion } from "@/lib/use-hydrated-reduced-motion";
 
 const accents = [
-  { accent: "#f57a0a", accentBg: "#fff4e8" },
+  { accent: "#67a83f", accentBg: "#edf7e5" },
   { accent: "#844bc8", accentBg: "#f3ecff" },
   { accent: "#0c91a1", accentBg: "#e8f8fa" },
   { accent: "#2b63cc", accentBg: "#eaf0ff" },
@@ -19,7 +20,7 @@ type HeroStatsProps = {
 };
 
 export function HeroStats({ items }: HeroStatsProps) {
-  const reduced = useReducedMotion();
+  const reduced = useHydratedReducedMotion();
 
   return (
     <section className="hero-stats" aria-label="Career statistics">

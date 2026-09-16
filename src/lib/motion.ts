@@ -1,4 +1,4 @@
-import type { Variants } from "framer-motion";
+import type { UseInViewOptions, Variants } from "framer-motion";
 
 export const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -43,8 +43,8 @@ export const scrollVariants = {
 
 export type ScrollVariant = keyof typeof scrollVariants;
 
-export function getViewport(reduced: boolean) {
+export function getViewport(reduced: boolean): UseInViewOptions {
   return reduced
-    ? { once: true, amount: 0.12 }
-    : { once: true, amount: 0.18, margin: "-60px 0px -40px 0px" };
+    ? { once: true, amount: 0.08 }
+    : { once: true, amount: 0.08, margin: "0px 0px -80px 0px" };
 }

@@ -2,15 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, MessageCircleMore, Mail, MapPin, X } from "lucide-react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Menu, MessageCircleMore, Mail, X } from "lucide-react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getViewport, scrollVariants, type ScrollVariant, ease } from "@/lib/motion";
 import { IntroVideoButton } from "@/components/video-showcase";
 import { FooterContactForm } from "@/components/footer-contact-form";
 import { SocialIcon } from "@/components/social-icon";
 import { socialLinks } from "@/content/site-data";
+import { useHydratedReducedMotion } from "@/lib/use-hydrated-reduced-motion";
 
 const links = [
   ["Home", "/"],
@@ -86,15 +87,32 @@ export function Header() {
       </div>
       <AnimatePresence>
         {open && (
-          <motion.div
-            id="mobile-navigation"
-            className="mobile-nav"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="shell mobile-nav-inner">
+          <>
+            <motion.button
+              type="button"
+              className="mobile-nav-backdrop"
+              aria-label="Close navigation"
+              onClick={() => setOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            />
+            <motion.aside
+              id="mobile-navigation"
+              className="mobile-nav"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              aria-label="Mobile navigation"
+            >
+              <div className="mobile-nav-head">
+                <Image src="/images/logo.webp" alt="Deepak Thimaya" width={180} height={48} />
+                <button type="button" onClick={() => setOpen(false)} aria-label="Close menu">
+                  <X size={24} />
+                </button>
+              </div>
+              <div className="mobile-nav-inner">
               {links.map(([label, href]) => (
                 <Link
                   key={label}
@@ -109,8 +127,14 @@ export function Header() {
                   {label}
                 </Link>
               ))}
-            </div>
-          </motion.div>
+              </div>
+              <div className="mobile-nav-contact">
+                <p>Contact</p>
+                <a href="tel:+919886464641"><MessageCircleMore /><span>+91 9886464641</span></a>
+                <a href="mailto:thimaya@gmail.com"><Mail /><span>thimaya@gmail.com</span></a>
+              </div>
+            </motion.aside>
+          </>
         )}
       </AnimatePresence>
     </header>
@@ -132,15 +156,18 @@ export function ScrollReveal({
   variant = "fadeUp",
   as = "div",
 }: ScrollRevealProps) {
-  const reduced = useReducedMotion();
+  const reduced = useHydratedReducedMotion();
+  const ref = useRef<HTMLElement | null>(null);
+  const inView = useInView(ref, getViewport(!!reduced));
   const Tag = motion[as];
+  const show = reduced || inView;
 
   return (
     <Tag
+      ref={ref as React.Ref<never>}
       className={className}
       initial={reduced ? false : "hidden"}
-      whileInView="visible"
-      viewport={getViewport(!!reduced)}
+      animate={show ? "visible" : "hidden"}
       variants={scrollVariants[variant]}
       transition={{ duration: reduced ? 0 : 0.65, delay: reduced ? 0 : delay, ease }}
     >
@@ -173,7 +200,7 @@ export function StaggerReveal({
   children: React.ReactNode;
   className?: string;
 }) {
-  const reduced = useReducedMotion();
+  const reduced = useHydratedReducedMotion();
 
   return (
     <motion.div
@@ -255,22 +282,6 @@ export function Footer() {
               <span>
                 <small>Email</small>
                 <strong>thimaya@gmail.com</strong>
-              </span>
-            </a>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=1st%20Floor%2066%2F3%2C%2018th%20Cross%2C%20behind%20Kalasha%2C%209th%20A%20Main%2C%20Jaya%20Nagar%201st%20Block%2C%20Jayanagar%203rd%20Block%2C%20Jayanagar%2C%20Bengaluru%2C%20Karnataka%20560011%2C%20India"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="footer-contact-icon">
-                <MapPin />
-              </span>
-              <span>
-                <small>Address</small>
-                <strong className="footer-contact-address">
-                  1st Floor 66/3, 18th Cross, behind Kalasha, 9th A Main, Jaya Nagar 1st Block,
-                  Jayanagar 3rd Block, Jayanagar, Bengaluru, Karnataka 560011, India
-                </strong>
               </span>
             </a>
           </div>

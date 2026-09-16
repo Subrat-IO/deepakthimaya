@@ -20,7 +20,8 @@ import { HeroVisualBackdrop } from "@/components/hero-visual-backdrop";
 import { AffiliationCards } from "@/components/affiliation-cards";
 import { IntroVideoButton, VideoShowcase } from "@/components/video-showcase";
 import { highlights, roles } from "@/content/site-data";
-import heroImage from "../../dtimage.webp";
+import heroImage from "./WhatsApp Image 2026-09-11 at 23.59.01.jpeg";
+import dkShivakumarImage from "./dkshivkumarimg.png";
 
 const journey = [
   {
@@ -51,7 +52,7 @@ const journey = [
     title: "Advertising & Brand Promotion",
     text:
       "Deepak began his professional career in advertising after college. A creative thinker and problem solver, he has worked from concept through design for established agencies and major promotion projects.",
-    image: "/images/Me in College.jpg",
+    image: "/images/der.jpeg",
     icon: Megaphone,
     href: "/work/advertising",
   },
@@ -65,7 +66,7 @@ export default function Home() {
         <section className="hero" id="top">
           <div className="shell hero-layout">
             <div className="hero-left">
-              <ScrollReveal variant="slideRight" className="hero-copy">
+              <div className="hero-copy">
                 <p className="hero-kicker">Deepak Thimaya is a</p>
                 <h1>
                   Well-Known <em>Political Analyst.</em>
@@ -74,6 +75,10 @@ export default function Home() {
                   TV personality, presenter, senior journalist, entrepreneur, teacher, film-maker,
                   producer, trainer, writer, artist, debate promoter, dramatist, brand consultant,
                   advertising professional, social entrepreneur and motivational speaker.
+                  <br />
+                  <strong className="hero-advisor-title">
+                    Communication Advisor to Hon&apos;ble Chief Minister of Karnataka
+                  </strong>
                 </p>
                 <div className="actions">
                   <Link className="button" href="/work">
@@ -81,7 +86,7 @@ export default function Home() {
                   </Link>
                   <IntroVideoButton className="button secondary" />
                 </div>
-              </ScrollReveal>
+              </div>
 
               <HeroStats
                 items={[
@@ -93,7 +98,7 @@ export default function Home() {
               />
             </div>
 
-            <ScrollReveal variant="zoomIn" delay={0.12} className="hero-visual">
+            <div className="hero-visual">
               <HeroVisualBackdrop />
               <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
               <div className="hero-orbit hero-orbit-two" aria-hidden="true" />
@@ -104,7 +109,7 @@ export default function Home() {
                   alt="Deepak Thimaya"
                   fill
                   sizes="(max-width: 860px) 92vw, 52vw"
-                  priority
+                  preload
                 />
               </div>
               <div className="hero-dots dots" aria-hidden="true" />
@@ -117,7 +122,7 @@ export default function Home() {
               <div className="hero-thought-card" aria-hidden="true">
                 Ideas<br />Dialogue<br />Impact
               </div>
-            </ScrollReveal>
+            </div>
           </div>
         </section>
 
@@ -125,8 +130,8 @@ export default function Home() {
           <ScrollReveal variant="slideLeft" className="portrait-wrap">
             <div className="portrait">
               <Image
-                src="/images/deeeep - Copy.jpg"
-                alt="Deepak Thimaya speaking at an event"
+                src={dkShivakumarImage}
+                alt="Deepak Thimaya with D. K. Shivakumar"
                 fill
                 sizes="(max-width: 700px) 86vw, 34vw"
               />
@@ -136,12 +141,23 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal variant="slideRight" delay={0.1} className="about-copy">
             <p className="eyebrow">ABOUT</p>
-            <h2>About in a Nutshell</h2>
+            <h2>More Than One Story</h2>
             <p>
-              Deepak Thimaya is a well-known TV personality, presenter, senior journalist,
-              entrepreneur, teacher, film-maker, producer, trainer, writer, artist, debate promoter,
-              dramatist, brand consultant, advertising professional, social entrepreneur, political
-              analyst and motivational speaker.
+              Deepak Thimaya has never belonged to just one frame. He is the director and
+              co-producer of the Kannada feature film <em>Neene Bari Neene</em>, a familiar
+              television anchor and presenter associated with Udaya TV, and a journalist whose
+              career began long before the studio lights came on.
+              <br />
+              <br />
+              As an educator and the founder of Verbattle, he has turned debate into a platform for
+              sharper thinking, confident expression and responsible leadership. His journey also
+              spans acting, writing, television production, entrepreneurship, political analysis,
+              brand communication and social initiatives—many roles, connected by one enduring
+              belief: ideas can move people.
+              <br />
+              <strong className="hero-advisor-title">
+                Communication Advisor to Hon&apos;ble Chief Minister of Karnataka
+              </strong>
             </p>
             <div className="mini-stats">
               <MiniStat icon={<BriefcaseBusiness />} value="30+ Years" label="Experience" />
