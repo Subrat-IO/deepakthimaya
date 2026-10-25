@@ -15,12 +15,10 @@ import {
 } from "lucide-react";
 import { Footer, Header, ScrollReveal, StaggerReveal } from "@/components/site-chrome";
 import { GallerySection } from "@/components/gallery-section";
-import { HeroStats } from "@/components/hero-stats";
-import { HeroVisualBackdrop } from "@/components/hero-visual-backdrop";
+import { HeroShowcase } from "@/components/hero-showcase";
 import { AffiliationCards } from "@/components/affiliation-cards";
-import { IntroVideoButton, VideoShowcase } from "@/components/video-showcase";
+import { VideoShowcase } from "@/components/video-showcase";
 import { highlights, roles } from "@/content/site-data";
-import heroImage from "./WhatsApp Image 2026-09-11 at 23.59.01.jpeg";
 import dkShivakumarImage from "./dkshivkumarimg.png";
 
 const journey = [
@@ -64,66 +62,14 @@ export default function Home() {
       <Header />
       <main className="home-page">
         <section className="hero" id="top">
-          <div className="shell hero-layout">
-            <div className="hero-left">
-              <div className="hero-copy">
-                <p className="hero-kicker">Deepak Thimaya is a</p>
-                <h1>
-                  Well-Known <em>Political Analyst.</em>
-                </h1>
-                <p className="lede">
-                  TV personality, presenter, senior journalist, entrepreneur, teacher, film-maker,
-                  producer, trainer, writer, artist, debate promoter, dramatist, brand consultant,
-                  advertising professional, social entrepreneur and motivational speaker.
-                  <br />
-                  <strong className="hero-advisor-title">
-                    Communication Advisor to Hon&apos;ble Chief Minister of Karnataka
-                  </strong>
-                </p>
-                <div className="actions">
-                  <Link className="button" href="/work">
-                    Explore Work <ArrowRight size={16} />
-                  </Link>
-                  <IntroVideoButton className="button secondary" />
-                </div>
-              </div>
-
-              <HeroStats
-                items={[
-                  { icon: <CalendarDays />, value: "30+", label: "Years in Media" },
-                  { icon: <Tv />, value: "Many", label: "TV Shows" },
-                  { icon: <Sparkles />, value: "Multi-Faceted", label: "Career" },
-                  { icon: <Globe2 />, value: "8+", label: "Countries for Verbattle" },
-                ]}
-              />
-            </div>
-
-            <div className="hero-visual">
-              <HeroVisualBackdrop />
-              <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
-              <div className="hero-orbit hero-orbit-two" aria-hidden="true" />
-              <div className="hero-halo" aria-hidden="true" />
-              <div className="hero-photo">
-                <Image
-                  src={heroImage}
-                  alt="Deepak Thimaya"
-                  fill
-                  sizes="(max-width: 860px) 92vw, 52vw"
-                  preload
-                />
-              </div>
-              <div className="hero-dots dots" aria-hidden="true" />
-              <p className="hero-orbit-words hero-orbit-words-left" aria-hidden="true">
-                PEOPLE<br />IDEAS<br />POLICY<br />PROGRESS
-              </p>
-              <p className="hero-orbit-words hero-orbit-words-right" aria-hidden="true">
-                A MORE<br />INFORMED<br />BRIGHTER<br />TOMORROW
-              </p>
-              <div className="hero-thought-card" aria-hidden="true">
-                Ideas<br />Dialogue<br />Impact
-              </div>
-            </div>
-          </div>
+          <HeroShowcase
+            stats={[
+              { icon: <CalendarDays />, value: "30+", label: "Years in Media" },
+              { icon: <Tv />, value: "Many", label: "TV Shows" },
+              { icon: <Sparkles />, value: "Multi-Faceted", label: "Career" },
+              { icon: <Globe2 />, value: "8+", label: "Countries for Verbattle" },
+            ]}
+          />
         </section>
 
         <section className="about shell home-section" id="about">

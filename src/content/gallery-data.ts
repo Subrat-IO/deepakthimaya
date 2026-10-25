@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
 import deepakPortrait from "@/app/deeepak2.png";
+import { galleryRecentUploads } from "@/content/gallery-recent-uploads";
 
 export type GalleryCategory = "conversations" | "stage" | "learning" | "portraits" | "art";
 export type GalleryChapterId = "early" | "sadhguru" | "learning" | "public-life" | "current" | "archive" | "studio";
@@ -26,7 +27,7 @@ export const galleryChapters: Array<{
   { id: "sadhguru", period: "2011", title: "Conversations with Sadhguru", description: "A memorable series of conversations and time spent with Sadhguru Jaggi Vasudev." },
   { id: "learning", period: "2014", title: "Learning without borders", description: "Interactive classrooms, workshops and exchanges with students and educators." },
   { id: "public-life", period: "2015–2020", title: "A voice in public life", description: "On stage, in conversation and across programmes that brought people and ideas together." },
-  { id: "current", period: "2021–Present", title: "The current chapter", description: "Recent portraits, civic conversations and public engagements." },
+  { id: "current", period: "2021–Present", title: "The current chapter", description: "Recent portraits, political engagements, television work and public conversations through 2026." },
   { id: "archive", period: "Across the years", title: "From the archive", description: "Selected portraits, travels, platforms and encounters from a life lived in public." },
   { id: "studio", period: "Art studio", title: "Lines, colour and inner worlds", description: "Paintings and drawings spanning landscapes, florals, figures and abstraction." },
 ];
@@ -342,11 +343,19 @@ export const galleryItems: GalleryItem[] = [
     id: "art-colour-rain", src: "/images/art_02.jpg", alt: "Abstract painting with vertical strokes of vivid colour",
     title: "Colour rain", caption: "Vertical light and colour gather into an abstract landscape.", category: "art", chapter: "studio",
   },
+  ...(galleryRecentUploads as GalleryItem[]),
 ];
 
 export const homeGalleryPreviewIds = [
-  "current-siddaramaiah-conversation", "sadhguru-portrait", "learning-circle", "public-honour",
-  "current-rahul-gandhi", "archive-hero-portrait", "art-mountain", "art-earth-portrait",
+  "oct9-check-portrait",
+  "recent-kodava-attire",
+  "recent-codava-rathna",
+  "recent-dk-kanakotsava",
+  "vb-three-team-stage",
+  "current-siddaramaiah-conversation",
+  "vb-junior-awards-2012",
+  "recent-red-embroidery",
+  "art-mountain-framed",
 ];
 
 export const galleryFilters = [
