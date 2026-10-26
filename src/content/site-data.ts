@@ -112,7 +112,7 @@ export const roles: Role[] = [
       {
         title: "Politics",
         paragraphs: [
-          "Deepak has conceptualised and led political conversations. From being a political observer and analyst to becoming a political communication strategist, and later serving as Political and Media Secretary to the President of the Karnataka Pradesh Congress Committee, he has transformed himself from a student of political science into a political analyst, political strategist and now a political functionary.",
+          "Deepak has conceptualised and led political conversations. From being a political observer and analyst to becoming a political communication strategist, and later serving as Political and Media Secretary to the President of the Karnataka Pradesh Congress Committee, he has transformed himself from a student of political science into a political analyst, political strategist and now a political functionary. He currently serves as Communication Advisor to the Hon'ble Chief Minister of Karnataka.",
         ],
       },
     ],
@@ -278,7 +278,7 @@ export const highlights = [
   {
     title: "Politics",
     text:
-      "Deepak has conceptualised and led political conversations. From being a political observer and analyst to becoming a political communication strategist, and later serving as Political and Media Secretary to the President of the Karnataka Pradesh Congress Committee, he has transformed himself from a student of political science into a political analyst, political strategist and now a political functionary.",
+      "Deepak has conceptualised and led political conversations. From being a political observer and analyst to becoming a political communication strategist, and later serving as Political and Media Secretary to the President of the Karnataka Pradesh Congress Committee, he has transformed himself from a student of political science into a political analyst, political strategist and now a political functionary. He currently serves as Communication Advisor to the Hon'ble Chief Minister of Karnataka.",
     image: "/images/ss5.jpg",
     href: "/work/political-shows",
   },

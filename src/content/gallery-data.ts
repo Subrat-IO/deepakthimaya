@@ -1,6 +1,6 @@
 import type { StaticImageData } from "next/image";
 import deepakPortrait from "@/app/deeepak2.png";
-import { galleryRecentUploads } from "@/content/gallery-recent-uploads";
+import { galleryOct25Uploads, galleryRecentUploads } from "@/content/gallery-recent-uploads";
 
 export type GalleryCategory = "conversations" | "stage" | "learning" | "portraits" | "art";
 export type GalleryChapterId = "early" | "sadhguru" | "learning" | "public-life" | "current" | "archive" | "studio";
@@ -33,6 +33,7 @@ export const galleryChapters: Array<{
 ];
 
 export const galleryItems: GalleryItem[] = [
+  ...(galleryOct25Uploads as GalleryItem[]),
   {
     id: "early-college", src: "/images/Me in College.jpg", alt: "A young Deepak Thimaya during his college years",
     title: "College days", caption: "An early portrait from Deepak Thimaya’s college years.", category: "portraits", chapter: "early", year: "Early years", focus: "center 24%",

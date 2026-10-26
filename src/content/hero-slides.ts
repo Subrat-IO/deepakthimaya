@@ -11,14 +11,14 @@ export type HeroSlide = {
 
 export const heroSlides: HeroSlide[] = [
   {
-    src: "/images/hero/slide-01.webp",
-    alt: "Portrait of Deepak Thimaya in a blue check shirt",
+    src: "/5f3b7a53-28f1-4857-9176-77e58a3396c0.jpg",
+    alt: "Portrait of Deepak Thimaya in a grey sweater and glasses",
     kicker: "Deepak Thimaya is a",
     title: "Well-Known",
     emphasis: "Political Analyst.",
     lede: "A trusted voice on Karnataka’s public stage — journalist, presenter and communicator whose work connects people, policy and ideas.",
-    focus: "50% 22%",
-    scale: 1.05,
+    focus: "50% 18%",
+    scale: 1.02,
   },
   {
     src: "/images/hero/slide-02.webp",

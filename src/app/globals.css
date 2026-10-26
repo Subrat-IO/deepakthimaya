@@ -5296,3 +5296,96 @@ textarea {
   line-height: 1.15;
   text-align: center;
 }
+
+/* ---------- Gallery loading (t: smooth batches, no layout shift) ---------- */
+.gallery-media {
+  background: linear-gradient(110deg, #edf1ea 30%, #f5f8f2 50%, #edf1ea 70%);
+  background-size: 220% 100%;
+  animation: gallery-skeleton 1.6s ease-in-out infinite;
+}
+.gallery-media.is-loaded {
+  animation: none;
+  background: #edf1ea;
+}
+.gallery-media .gallery-img {
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.28s ease;
+}
+.gallery-media.is-loaded .gallery-img {
+  opacity: 1;
+}
+@keyframes gallery-skeleton {
+  from { background-position: 120% 0; }
+  to { background-position: -120% 0; }
+}
+.gallery-experience .gallery.gallery--masonry {
+  display: flex;
+  align-items: flex-start;
+  column-count: auto;
+  columns: auto;
+  gap: 7px;
+}
+.gallery-experience .gallery-masonry-col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.gallery-experience .gallery--masonry .gallery-item {
+  display: block;
+  margin: 0;
+}
+.gallery-load-status {
+  display: flex;
+  justify-content: center;
+  min-height: 56px;
+  padding: 18px 0 8px;
+}
+.gallery-loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7a63;
+  font-size: 13px;
+  opacity: 0.55;
+  transition: opacity 0.25s ease;
+}
+.gallery-loader.is-active {
+  opacity: 1;
+}
+.gallery-loader-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #73aa50;
+  animation: gallery-loader-pulse 1s ease-in-out infinite;
+}
+.gallery-loader-dot:nth-child(2) { animation-delay: 0.15s; }
+.gallery-loader-dot:nth-child(3) { animation-delay: 0.3s; }
+.gallery-loader-text {
+  margin-left: 4px;
+}
+@keyframes gallery-loader-pulse {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-2px); }
+}
+.gallery-end {
+  color: #8a9683;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 560px) {
+  .gallery-experience .gallery.gallery--masonry,
+  .gallery-experience .gallery-masonry-col {
+    gap: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-media { animation: none; }
+  .gallery-media .gallery-img { transition: none; }
+  .gallery-loader-dot { animation: none; }
+}
+.gallery-experience .gallery--pending {
+  min-height: 120vh;
+}

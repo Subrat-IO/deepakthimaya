@@ -148,7 +148,7 @@ export function HeroShowcase({ stats }: HeroShowcaseProps) {
                   {slide.lede}
                   <br />
                   <strong className="hero-advisor-title">
-                    Communication Advisor to Hon&apos;ble Chief Minister of Karnataka
+                    Communication Advisor to the Hon&apos;ble Chief Minister of Karnataka
                   </strong>
                 </motion.p>
               </motion.div>

@@ -102,7 +102,7 @@ export default function Home() {
               belief: ideas can move people.
               <br />
               <strong className="hero-advisor-title">
-                Communication Advisor to Hon&apos;ble Chief Minister of Karnataka
+                Communication Advisor to the Hon&apos;ble Chief Minister of Karnataka
               </strong>
             </p>
             <div className="mini-stats">

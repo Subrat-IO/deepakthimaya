@@ -119,7 +119,7 @@ export const achievementCategories: AchievementCategory[] = [
       "Served as the Political and Media Secretary to Shri D. K. Shivakumar during his tenure as President of the Karnataka Pradesh Congress Committee.",
       "Continues to serve as a Chief Spokesperson of the Karnataka Pradesh Congress Committee.",
       "Advised political leaders on communication, public image, media presentation and strategy.",
-      "Was appointed Communication Adviser to the Chief Minister of Karnataka, recognising his experience in media, public communication, political analysis and strategic thinking.",
+      "Was appointed Communication Advisor to the Hon'ble Chief Minister of Karnataka, recognising his experience in media, public communication, political analysis and strategic thinking.",
       "Has addressed large public audiences and delivered talks on communication, leadership, politics, motivation and social issues.",
     ],
   },
